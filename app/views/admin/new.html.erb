@@ -1,0 +1,20 @@
+  <h1>Add New vendor</h1>
+
+  <h3>you are <%= current_user.email %> </h3>
+  <%= form_for(:admin, :url => {:action => 'create'}) do |f| %>
+    <div>
+      <%= f.label :email %><br>
+      <%= f.email_field :email %>
+    </div>
+    <div>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation    %>
+    </div>
+    <div>
+      <%= submit_tag("Create Vendor") %>
+    </div>
+  <% end %>

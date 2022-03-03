@@ -1,0 +1,46 @@
+
+<h1>Customer</h1>
+<h3>you are <%= current_user.email %> </h3>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>image</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody> 
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.price %></td>
+        <td><%= product.description %></td>
+        <td> <%= image_tag(product.image, style:'width:500px')%> </td>
+        <td>
+          <%= form_with model: @order_item do |f| %>
+          <%= f.hidden_field :product_id, value: product.id %>
+          <%= f.number_field :quantity, value: 1, min: 1 %>
+          <%= f.submit "Add To Cart" %>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+<% end %>
+<br>
+
+
+<%= link_to "Your Total is $#{current_order.subtotal} clicks to proceed", '/cart' %> 
+<%= link_to 'View Orders', orders_path %>
+
+<br>
+<% if current_user %>
+<%= link_to "Edit Info", edit_user_registration_path %>
+<br>
+<%= link_to "Sign out", destroy_user_session_path,:method => 'delete', data: {confirm: 'Are you sure?'} %>
+<% else %>
+<%= link_to "Sign Up",  new_user_registration_path %> <br>
+<%= link_to "Sign In",  new_user_session_path %> <br>
+<% end %>

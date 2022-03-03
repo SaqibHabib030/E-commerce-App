@@ -1,0 +1,7 @@
+
+  <h2>Update User Role</h2>
+  <h3>you are <%= current_user.email %> </h3>
+  <%= form_for(:admin, :url => {:action => 'update', :id => @user.id}, method: :put) do |f| %>
+    <%= f.collection_check_boxes :role_ids, Role.where(:name=> "vendor"), :id, :name %>
+    <%= submit_tag("Update") %>  
+  <% end %>

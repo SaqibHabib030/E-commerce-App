@@ -1,0 +1,37 @@
+ 
+ <h3>you are <%= current_user.email %> </h3>
+   <%  @order_items.each do |item| %>
+     <div> Your Item is : <b><%=item.product.title%></b></div> 
+     <div> Price Of your product per one unit is : <b><%=item.product.price%> </b></div>
+     <div> Quantity is : <b><%=item.quantity%> </b></div>
+     <%= image_tag(item.product.image, style:'width:40%') %>            
+     <h5>Subtotal:<%= item.total %></h5>
+   <% end %> 
+
+<%= form_with model: @order do |form| %>
+  <hr>  
+  <div>
+    <%= form.label :email %><br>
+    <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div>
+    <%= form.label :address %><br>
+    <%= form.text_area :address %><br>
+  </div>
+
+  <div>
+    <%= form.label :postal_code %><br>
+    <%= form.number_field :postal_code %><br>
+  </div>
+<br>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>
+
+ <h3> Your Current order has Total of: <%= current_order.subtotal %> </h3>
+ <%= link_to "Shop More..", homepage_index_path %>
+</div> 
