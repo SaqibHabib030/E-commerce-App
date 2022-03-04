@@ -1,0 +1,253 @@
+
+---
+active_storage_attachments:
+  columns:
+  - id
+  - name
+  - record_type
+  - record_id
+  - blob_id
+  - created_at
+  records: 
+  - - 1
+    - image
+    - Product
+    - 1
+    - 1
+    - '2022-03-03 10:06:58.427617'
+
+---
+active_storage_blobs:
+  columns:
+  - id
+  - key
+  - filename
+  - content_type
+  - metadata
+  - service_name
+  - byte_size
+  - checksum
+  - created_at
+  records: 
+  - - 1
+    - rr9rp1185a2b9fc7yq4ndwvrrtx5
+    - pexels-karsten-madsen-18104.jpg
+    - image/jpeg
+    - '{"identified":true,"width":5184,"height":3456,"analyzed":true}'
+    - local
+    - 2037854
+    - TXAigPWlhhj4racN6ndO/g==
+    - '2022-03-03 10:06:58.421300'
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2022-03-03 10:04:01.298857'
+    - '2022-03-03 10:04:01.298857'
+  - - schema_sha1
+    - 1d081941400142cb9c0cf400bf7e53b61c62fa92
+    - '2022-03-03 10:04:01.370979'
+    - '2022-03-03 10:04:01.370979'
+
+---
+order_items:
+  columns:
+  - id
+  - created_at
+  - updated_at
+  - quantity
+  - product_id
+  - unit_price
+  - total
+  - order_id
+  records: 
+  - - 1
+    - '2022-03-03 10:08:53.408392'
+    - '2022-03-03 10:08:53.408392'
+    - 1
+    - 1
+    - 1231
+    - 1231
+    - 
+  - - 2
+    - '2022-03-03 10:08:54.699153'
+    - '2022-03-03 10:08:54.699153'
+    - 1
+    - 1
+    - 1231
+    - 1231
+    - 
+  - - 3
+    - '2022-03-03 10:09:02.165518'
+    - '2022-03-03 10:10:23.927881'
+    - 1
+    - 1
+    - 1231
+    - 1231
+    - 6
+  - - 4
+    - '2022-03-03 10:11:49.223905'
+    - '2022-03-03 10:11:49.223905'
+    - 5
+    - 1
+    - 1231
+    - 30775
+    - 
+  - - 5
+    - '2022-03-03 10:11:51.832077'
+    - '2022-03-03 10:11:51.832077'
+    - 2
+    - 1
+    - 1231
+    - 4924
+    - 
+  - - 6
+    - '2022-03-03 10:13:10.950641'
+    - '2022-03-03 10:13:10.950641'
+    - 1
+    - 1
+    - 1231
+    - 1231
+    - 9
+
+---
+orders:
+  columns:
+  - id
+  - created_at
+  - updated_at
+  - subtotal
+  - total
+  - email
+  - address
+  - postal_code
+  - quantity
+  - user_id
+  records: 
+  - - 6
+    - '2022-03-03 10:10:23.922470'
+    - '2022-03-03 10:10:23.922470'
+    - 1231
+    - 
+    - saqibhabib030@gmail.com
+    - sd
+    - 11
+    - 
+    - 3
+  - - 9
+    - '2022-03-03 10:13:10.940407'
+    - '2022-03-03 10:13:10.940407'
+    - 1231
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 3
+
+---
+products:
+  columns:
+  - id
+  - created_at
+  - updated_at
+  - title
+  - price
+  - description
+  - image
+  - user_id
+  records: 
+  - - 1
+    - '2022-03-03 10:06:58.412915'
+    - '2022-03-03 10:06:58.431774'
+    - shirt
+    - 1231
+    - dcsjcs
+    - 
+    - 2
+
+---
+roles:
+  columns:
+  - id
+  - name
+  - resource_type
+  - resource_id
+  - created_at
+  - updated_at
+  records: 
+  - - 2
+    - admin
+    - 
+    - 
+    - '2022-03-03 10:05:36.813072'
+    - '2022-03-03 10:05:36.813072'
+  - - 3
+    - vendor
+    - 
+    - 
+    - '2022-03-03 10:06:28.318499'
+    - '2022-03-03 10:06:28.318499'
+  - - 4
+    - customer
+    - 
+    - 
+    - '2022-03-03 10:07:47.240456'
+    - '2022-03-03 10:07:47.240456'
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - saqibhabib030@gmail.com
+    - "$2a$12$HMoiOtXgXteYwe0m1J0Ju.3bPLiJtKAkDbCYdpns2a8FBn3wgh0km"
+    - 
+    - 
+    - 
+    - '2022-03-03 10:04:26.898647'
+    - '2022-03-03 10:04:26.898647'
+  - - 2
+    - vendor@gmail.com
+    - "$2a$12$pmRyOaZDTK2w8BF/0xtnMOWShv2Ske7F0oXwqMdDhY/I8TT57MyT."
+    - 
+    - 
+    - 
+    - '2022-03-03 10:04:53.394956'
+    - '2022-03-03 10:04:53.394956'
+  - - 3
+    - customer1@gmail.com
+    - "$2a$12$oYa57OtffnvdiAPlOv8zjunC6ZKoWjQo4GUFa.PkFZhdTndYT0/Mi"
+    - 
+    - 
+    - 
+    - '2022-03-03 10:07:47.232267'
+    - '2022-03-03 10:07:47.232267'
+
+---
+users_roles:
+  columns:
+  - user_id
+  - role_id
+  records: 
+  - - 1
+    - 2
+  - - 2
+    - 3
+  - - 3
+    - 4
