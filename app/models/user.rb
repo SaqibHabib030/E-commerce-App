@@ -5,10 +5,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
 
-has_many :products
-has_many :orders
+  has_many :products
+  has_many :orders
 
  after_create :assign_default_role
  validate :must_have_a_role, on: :update
@@ -21,11 +21,11 @@ has_many :orders
 
   def assign_default_role 
     self.add_role(:customer) if self.roles.blank?
-end
+  end
 
- def must_have_a_role
-unless roles.any? 
-  errors.add(:roles, "must have role")
-end
-end
+  def must_have_a_role
+    unless roles.any? 
+      errors.add(:roles, "must have role")
+    end
+  end
 end

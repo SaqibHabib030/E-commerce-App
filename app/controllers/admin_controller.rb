@@ -24,15 +24,16 @@ class AdminController < ApplicationController
   end
   
   def update
-   @user = User.find(params[:id])
+    @user = User.find(params[:id])
     if @user.update(user_params)
-     redirect_to admin_index_path
-   else
-     render :edit, status: :unprocessable_entity
+      redirect_to admin_index_path, notice: "Role updated"
+    else
+      flash.now[:error] = "Error: must assigned role"
+      render :edit
     end
    end
 
-  def destroy
+    def destroy
       @user = User.find(params[:id])
       @user.destroy
       redirect_to root_path, status: :see_other
@@ -40,6 +41,6 @@ class AdminController < ApplicationController
   
     private
     def user_params
-      params.require(:admin).permit({role_ids: []}, :email, :password, :password_confirmation)
+      params.require(:admin).permit(:email, :password, :password_confirmation)
     end
 end

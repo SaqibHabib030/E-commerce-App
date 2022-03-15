@@ -4,7 +4,7 @@ class HomepageController < ApplicationController
    
     
     def index
-# binding.pry
+
       
         if current_user.has_role? :admin
             redirect_to admin_index_path 

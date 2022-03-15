@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
     before_action :authenticate_user!, except: [:show]
     
     def index
-        # @products = Product.all
         @products = current_user.products
     end
     

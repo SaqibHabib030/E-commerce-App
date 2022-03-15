@@ -86,8 +86,6 @@ Rails.application.configure do
   password:             Rails.application.credentials.dig(:google_smtp, :password),
   authentication:       'login',
   enable_starttls_auto: true  }
-
-
   config.action_mailer.default_url_options = { host: 'my-first-e-commerce-app.herokuapp.com'}
 
 end
