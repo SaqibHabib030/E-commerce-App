@@ -5,12 +5,10 @@ root 'homepage#index'
  devise_for :users, controllers: {
    sessions: 'users/sessions'
   }
-  
   get 'cart', to: 'cart#show'
   resources :products
   resources :admin
   resources :homepage
   resources :order_items
   resources :orders
-  default_url_options :host => "example.com"
 end

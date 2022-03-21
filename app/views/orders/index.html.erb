@@ -16,8 +16,10 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.address %></td>
+        <% if order.subtotal > 0 %>
         <td><%= order.subtotal %>
         <td><%= link_to 'View', order %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
